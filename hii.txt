@@ -1,0 +1,1 @@
+AOS (Animate On Scroll) is a popular JavaScript library that allows developers to easily add animations to web pages as the user scrolls down.
