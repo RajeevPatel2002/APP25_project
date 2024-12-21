@@ -18,13 +18,10 @@
 // $res=fopen("demo.txt","r+");// read and write file
 // echo fread($res,filesize("hii.txt"));
 // fwrite($res," this is read + write file opertaions");
-$res=fopen("demo1.txt","w+");// write and read file
-fwrite($res,"write file opertaions + this is read ");
-fseek($res,0);
-echo fread($res,filesize("demo1.txt"));
-
-
-
+// $res=fopen("demo1.txt","w+");// write and read file
+// fwrite($res,"write file opertaions + this is read ");
+// fseek($res,0);
+// echo fread($res,filesize("demo1.txt"));
 
 fclose($res);
 // fclose($data);
