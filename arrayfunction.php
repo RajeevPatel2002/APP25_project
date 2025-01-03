@@ -34,3 +34,10 @@ $arr=[1,2,3,4,5,6];
 // $animal=["dog","Elephant","Donkey","Horse","Lion"];
 // print_r(array_search("dog",$animal));
 ?>
+<?php
+$arr = [1, 1, 2, 2,2,2,2,3,3,3,3,3,3, 2, 3, 2, 4, 4, 4,7,7,7,7,7, 7, 4, 5,6];
+$Raj = array_unique($arr);
+
+echo "Unique elements are : " . implode(',', $Raj);
+// print_r( $Raj);
+?>

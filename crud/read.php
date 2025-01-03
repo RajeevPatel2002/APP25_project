@@ -17,7 +17,7 @@
 
         .admin-batch-container {
             min-height: 300px;
-            width: 80%;
+            width: 100%;
             background: #f5f0ed;
             margin: 50px auto;
             padding-bottom: 50px;
@@ -111,63 +111,59 @@
         <h2 class="admin-batch-text"><i class="fa fa-file"></i> MANAGE BATCH</h2>
 
         <div class="admin-batch-button">
-            <a href="crud2.php" class="admin-batch-bLink">Create New Batch</a>
-
+            <a href="create.php" class="admin-batch-bLink">Create New Batch</a>
         </div>
-
-
-
         <table class="admin-batch-tableOuter">
             <thead>
                 <tr>
                     <th class="admin-batch-tableHead">id</th>
-                    <th class="admin-batch-tableHead">Name</th>
-                    <th class="admin-batch-tableHead">Email</th>
+                    <th class="admin-batch-tableHead">User Name</th>
+                    <th class="admin-batch-tableHead">Date of Birth</th>
+                    <th class="admin-batch-tableHead">Gender</th>
+                    <th class="admin-batch-tableHead">Country</th>
+                    <th class="admin-batch-tableHead">Subject</th>
                     <th class="admin-batch-tableHead">Message</th>
+                    <th class="admin-batch-tableHead">Created Time</th>
                     <th class="admin-batch-tableHead">Action</th>
-
-
                 </tr>
             </thead>
 
             <tbody>
                 <?php
-                $con = mysqli_connect('localhost','root','','demo4');
-                $sql = "Select * from contact_tbl";
-                $result = mysqli_query($con, $sql);
-                if(mysqli_num_rows($result)>0)
-                {
-                    while($record= mysqli_fetch_assoc($result)){
-
+                $connect = mysqli_connect('localhost', 'root', '', 'personal_data');
+                $sql = "Select * from reg_form";
+                $result = mysqli_query($connect, $sql);
+                if (mysqli_num_rows($result) > 0) {
+                    while ($record = mysqli_fetch_assoc($result)) {
                 ?>
+                        <tr>
+                            <td class="admin-batch-tableData"><?= $record['id'] ?></td>
+                            <td class="admin-batch-tableData"><?= $record['username'] ?></td>
+                            <td class="admin-batch-tableData"><?= $record['dob'] ?></td>
+                            <td class="admin-batch-tableData"><?= $record['gender'] ?></td>
+                            <td class="admin-batch-tableData"><?= $record['country'] ?></td>
+                            <td class="admin-batch-tableData"><?= $record['subject'] ?></td>
+                            <td class="admin-batch-tableData"><?= $record['description'] ?></td>
+                            <td class="admin-batch-tableData"><?= $record['createdAt'] ?></td>
+
+                            <td class="admin-batch-tableData">
+                                <a href="update.php?id=<?= $record['id'] ?>" class="admin-batch-actionLink">
+                                    <i class="fa fa-edit"></i>
+
+                                </a>
+                                <a href="delete.php?id=<?= $record['id'] ?>">
+                                    <i class="fa fa-trash"></i>
+
+                                </a>
+
+                            </td>
+                        </tr>
 
 
-                <tr>
-                    <td class="admin-batch-tableData"><?= $record['id'] ?></td>
-                    <td class="admin-batch-tableData"><?= $record['name'] ?></td>
-                    <td class="admin-batch-tableData"><?= $record['email'] ?></td>
-                    <td class="admin-batch-tableData"><?= $record['message'] ?></td>
-                    
-
-                    <td class="admin-batch-tableData">
-                        <a href="update2.php?id= <?= $record['id'] ?>" class="admin-batch-actionLink">
-                            <i class="fa fa-edit"></i>
-                            
-                        </a>
-                        <a href="delete2.php?id= <?= $record['id'] ?>" class="">
-                                <i class="fa fa-trash"></i>
-
-                            </a>
-                    </td>
-                </tr>
-
-               <?php
-               
+                <?php
                     }
                 }
-               
-               ?>
-
+                ?>
 
             </tbody>
 
