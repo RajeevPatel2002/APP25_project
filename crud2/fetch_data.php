@@ -36,7 +36,7 @@ if (!isset($_SESSION['user'])){
   <tbody>
     <?php
     
-    $conn = mysqli_connect("localhost","root","","taskwork");
+    $conn = mysqli_connect("localhost","root","","demo2");
     $sql = "select*from data_insert";
     $result = mysqli_query($conn,$sql);
     if(mysqli_num_rows($result) > 0){

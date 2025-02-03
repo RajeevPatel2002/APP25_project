@@ -8,7 +8,7 @@ if (!isset($_SESSION['user'])){
 
 
 
-$conn = mysqli_connect(hostname: "localhost",username: "root",password: "",database: "taskwork");
+$conn = mysqli_connect(hostname: "localhost",username: "root",password: "",database: "demo2");
 if ($_SERVER["REQUEST_METHOD"]=='POST'){
     if(empty($_POST['fname'])){
         echo "<script>

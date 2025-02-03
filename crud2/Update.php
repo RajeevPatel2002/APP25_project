@@ -5,7 +5,7 @@ if (!isset($_SESSION['user'])){
     header('Location:login_form.php');
 }
 
-$conn = mysqli_connect("localhost","root","","taskwork");
+$conn = mysqli_connect("localhost","root","","demo2");
 if($_SERVER["REQUEST_METHOD"]=='POST'){
     if(empty($_POST['fname'])){
         echo "<script>

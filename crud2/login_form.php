@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "taskwork");
+$conn = mysqli_connect("localhost", "root", "", "demo2");
 
 session_start();
 if (isset($_SESSION['user'])){
@@ -15,7 +15,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $sql = "select * from signup where email='$email' and password='$password'";
     $result = mysqli_query($conn,$sql);
     if(mysqli_num_rows($result)>0)
-    // if($email == 'diby@gmail.com' && $password == '12345')
     {
         $_SESSION['user']=$email;
         header('Location:fetch_data.php');

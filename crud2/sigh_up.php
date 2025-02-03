@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "taskwork");
+$conn = mysqli_connect("localhost", "root", "", "demo2");
 
 if ($_SERVER["REQUEST_METHOD"] == 'POST') { 
     if (empty($_POST['name'])) { 
